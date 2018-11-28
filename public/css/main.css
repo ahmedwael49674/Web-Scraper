@@ -1,0 +1,26 @@
+.container {
+    margin-top: 3%;
+}
+
+form {
+    margin: 10% 0;
+    padding: 33px;
+    border: 1px solid #0069d9;
+    border-radius: 25px;
+}
+
+form h6 {
+    text-align: center;
+}
+
+.alert {
+    text-align: center;
+}
+
+h5 {
+    text-align: center;
+}
+
+.form-group {
+    margin: 29px;
+}
