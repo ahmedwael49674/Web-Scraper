@@ -1,9 +1,15 @@
-# WebScraping
+# Web Scraper
+![alt text](https://github.com/ahmedwael49674/webScraping/blob/master/analysis/view.jpg)
+ 
+## Summary
+web scraper used to send requests and get the HTML content of the page also provide paginate over pages feature from the UI choose the start and the end page and the system will loop over the pages then filter it using regex to get a specified part then store it in the file .
 
-## description
-sent a request using guzzle package which I had already installed using composer get the page source code then filtered it using regex.
+## Used techniques
+1. php
+2. Guzzle package
+3. Regex
 
-## content
+## Description
 in the index page, I asked the user to choose website I send the target link as value to action page using a post request 
 
 1. action:  receive the target URL 
