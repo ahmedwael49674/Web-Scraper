@@ -41,5 +41,7 @@ in the index page, I asked the user to choose website I send the target link as 
  ## sequence  diagram 
  ![alt text](https://github.com/ahmedwael49674/webScraping/blob/master/analysis/sequence%20diagram.jpg)
  
- 
+## How to run
+1. Git Clone the project
+2. Composer install
   
