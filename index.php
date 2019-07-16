@@ -26,7 +26,7 @@
 
             <div class="form-group">
                 <input type="checkbox" name='pagination'>
-                <label class="form-check-label"> pagginate over the pages (pagination will automatically loop over the first 10 pages)</label>
+                <label class="form-check-label"> pagginate over the pages (pagination will automatically loop over the first 2 pages)</label>
             </div>
             
             <input class="form-control btn btn-primary" type="submit" value="scrape" name="submit">
