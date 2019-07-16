@@ -19,13 +19,16 @@ class ScraperController implements ScraperInterface
         $origin         =   parse_url($url, PHP_URL_SCHEME).'//'.parse_url($url, PHP_URL_HOST);
         $host           =   parse_url($url, PHP_URL_HOST);
         $headers =   [
-            "User-Agent"                => "Mozilla/5.0 (Windows NT 6.1; Win64; x64; rv:47.0) Gecko/20100101 Firefox/47.0",
+            "User-Agent"                => "Mozilla/5.0 (Windows NT 6.3; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36",
             "Accept-Language"	        => "en-US,en;q=0.5",
             "Cache-Control"	            => "max-age=0",
             "Connection"	            => "keep-alive",
             "Accept-Encoding"	        => "gzip",
             "origin"	                => $origin,
             "Host"	                    => $host,
+            // ":authority"	            => $origin,
+            // ":method"	                => 'GET',
+            // ":scheme"	                => 'https',
         ];
         $this->client = new Client([
             'headers' => $headers,
@@ -60,7 +63,6 @@ class ScraperController implements ScraperInterface
     /**
      * get request html content (body)
      *
-     *
      * @return String
     */
     private function getBody() :String
@@ -75,18 +77,18 @@ class ScraperController implements ScraperInterface
      *
      * @return Bool
     */
-    public function CheckNext(String $body) :Bool
-    {
-        preg_match_all('/<li .*class=".*next*./',$body,$match);
-        return empty($match[0])?false:true;
-    }
+    // public function CheckNext(String $body) :Bool
+    // {
+    //     preg_match_all('/<li .*class=".*next*./',$body,$match);
+    //     return empty($match[0])?false:true;
+    // }
 
     /**
      * save request links by calling
      * save function from given file object
      *
-     *@param Array $Links
-     *@param String $url
+     * @param Array $Links
+     * @param String $url
      *
     */
     public function save(Array $Links, String $url)

@@ -9,21 +9,19 @@ use App\factories\LinksFactory;
 if (isset($_POST['submit']) && $_POST['url']) //ensure that request came from index page form
 {
     $url                 =   $_POST['url'];
-    $scraper             =   new ScraperController(new FileController('links.txt'),$url);
+    $scraper             =   new ScraperController(new FileController('links.txt'), $url);
     $domain              =   GeneralHelpers::GetDomianName($url); //generate domian name form url
-    $next                =   true;
-    $page                =   1;
-
     $LinksFactory        =   new LinksFactory();
     $domianableObject    =   $LinksFactory->create($domain); //create object using domianable name (polymorphism)
-
-    while($next)
+    $page                =   $domianableObject->startFrom;
+    $paggination         =   isset($_POST['pagination']) ? 2 : 11;
+    // while($next == 1)
+    for($next = 1;$next <= $paggination;$next++)
     {
         $body            =   $scraper->sendRequest($url.$page);
         $links           =   $domianableObject->index($body);
-        $scraper->save($links,$url.$page);
-        $next            =   $scraper->CheckNext($body);
-        $page ++;
+        $scraper->save($links, $url.$page);
+        $page            =   $page + $domianableObject->addPerPage;
     }
 
     header("location: links.txt");
