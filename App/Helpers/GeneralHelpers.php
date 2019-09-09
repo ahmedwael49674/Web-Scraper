@@ -14,7 +14,7 @@ class GeneralHelpers
     public static function GetDomianName(String $url) :String
     {
         $host         =   parse_url($url, PHP_URL_HOST);
-        preg_match('/(?:www\.)?([^\.]+).com/', $host, $match);
+        preg_match('/(?:www\.)?([^\.]+)\.(com|net)/', $host, $match);
         return $match[1];
     }
 }

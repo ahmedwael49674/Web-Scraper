@@ -25,6 +25,12 @@
             </div>
 
             <div class="form-group">
+                <input class="form-check-input" type="radio" name="url"
+                    value="https://we.akoam.net/168353/" required>
+                <label class="form-check-label"> akoam </label>
+            </div>
+
+            <div class="form-group">
                 <input type="checkbox" name='pagination'>
                 <label class="form-check-label"> pagginate over the pages (pagination will automatically loop over the first 2 pages)</label>
             </div>

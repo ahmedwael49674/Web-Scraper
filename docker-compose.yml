@@ -1,0 +1,27 @@
+version: '2'
+services:
+      
+  # The Application
+  app:
+    container_name: app
+    build:
+      context: ./
+      dockerfile: docker/app.dockerfile
+    working_dir: /var/www/public
+    volumes:
+      - ./:/var/www/public
+
+
+  # The Web Server
+  web:
+    container_name: web
+    restart: on-failure
+    build:
+      context: ./
+      dockerfile: docker/web.dockerfile
+    working_dir: /var/www/public
+    volumes_from:
+      - app
+    ports:
+      - 80:80
+      
