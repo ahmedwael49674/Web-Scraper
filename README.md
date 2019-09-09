@@ -44,4 +44,12 @@ in the index page, I asked the user to choose website I send the target link as 
 ## How to run
 1. Git Clone the project
 2. Composer install
-  
+3. Visit (http://localhost)
+ 
+Or using docker:
+
+1. git clone the project
+2. docker run --rm -v $(pwd):/app composer/composer install
+3. docker-compose up -d
+4. docker-compose exec app bash
+5. visit (http://localhost)
